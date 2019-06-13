@@ -43,9 +43,10 @@ export default class WeatherDetailScreen extends React.Component {
     }
 
     let celsius = this.state.main.temp - 273.15;
-
+    let city_name = this.state.weather.id;
     return (
       <View style={styles.container}>
+        <Text>City_Name : {city_name}</Text>
         <Text>온도: {celsius.toFixed(1)}</Text>
       </View>
     );
