@@ -66,10 +66,11 @@ const styles = StyleSheet.create({
     height: 50,
     justifyContent: 'center',
 
-    borderWidth: 1,
-    borderColor: 'orange',
+    borderWidth: 2,
+    borderColor: 'blue',
   },
   text: {
+    fontWeight: 'bold',
     fontSize: 20,
     textAlign: 'center',
   }

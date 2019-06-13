@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View,Image } from 'react-native';
 import { Constants } from 'expo';
 
 export default class WeatherDetailScreen extends React.Component {
@@ -43,11 +43,22 @@ export default class WeatherDetailScreen extends React.Component {
     }
 
     let celsius = this.state.main.temp - 273.15;
-    let city_name = this.state.weather.id;
+    let icon = this.state.weather[0].icon;
+    var comment;
+   
+    if(celsius<20){
+      comment= "날이 춥네요";
+    }
+    else{
+      comment="날이 덥네요";
+    }
     return (
       <View style={styles.container}>
-        <Text>City_Name : {city_name}</Text>
-        <Text>온도: {celsius.toFixed(1)}</Text>
+        <Text style={styles.weather}>{celsius.toFixed(1)}°</Text>
+        <Image
+            style ={styles.img}
+            source = {{uri: `http://openweathermap.org/img/w/${icon}.png`}}
+            />
       </View>
     );
   }
@@ -58,5 +69,19 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     marginTop: Constants.statusBarHeight,
+    justifyContent: 'center',
+    alignItems: 'center',
+    
   },
+  weather:{
+    fontSize : 120,
+    textAlign : "center",
+    fontWeight: 'bold',
+  },
+  img:{
+      width : 200,
+      height: 200,
+     
+
+  }
 });
