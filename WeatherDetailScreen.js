@@ -44,6 +44,7 @@ export default class WeatherDetailScreen extends React.Component {
 
     let celsius = this.state.main.temp - 273.15;
     let icon = this.state.weather[0].icon;
+    let windspeed = this.state.wind.speed;
     var comment;
    
     if(celsius<20){
@@ -59,6 +60,7 @@ export default class WeatherDetailScreen extends React.Component {
             style ={styles.img}
             source = {{uri: `http://openweathermap.org/img/w/${icon}.png`}}
             />
+        <Text style={styles.ws}>바람 세기 : {windspeed}m/s</Text>
       </View>
     );
   }
@@ -69,9 +71,13 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     marginTop: Constants.statusBarHeight,
-    justifyContent: 'center',
-    alignItems: 'center',
+   
     
+  },
+  ws:{
+    textAlign: 'right',
+    fontSize: 20,
+    marginRight : 10,
   },
   weather:{
     fontSize : 120,
@@ -79,9 +85,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   img:{
+    alignSelf: 'flex-start',
       width : 200,
       height: 200,
-     
+     marginLeft : 110,
 
   }
 });

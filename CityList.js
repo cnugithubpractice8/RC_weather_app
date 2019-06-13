@@ -1,10 +1,17 @@
 import React from 'react';
 import { FlatList, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { Constants } from 'expo';
+import { Icon } from 'native-base'; 
 
 export default class CityList extends React.Component {
   static navigationOptions = {
-    title: 'Cities',
+    headerTitleStyle: { 
+      textAlign:"center", 
+      flex:1 
+  },
+    headerLeft: <Icon name='ios-camera' style={{ paddingLeft:10 }}/>,
+    title: "Weather" ,
+    headerRight: <Icon name='ios-send' style={{ paddingRight:10 }}/>,
   };
 
   constructor(props) {
@@ -59,6 +66,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     marginTop: Constants.statusBarHeight,
+    textAlign: 'center',
+   
   },
 
   item: {
@@ -66,8 +75,8 @@ const styles = StyleSheet.create({
     height: 50,
     justifyContent: 'center',
 
-    borderWidth: 2,
-    borderColor: 'blue',
+    borderWidth: 1,
+    borderColor: 'black',
   },
   text: {
     fontWeight: 'bold',
