@@ -1,25 +1,11 @@
-# RN101-class
+# Team8
 
-Example for React Native 101 class. Each commit represents each step.
+1. 온도와 더불어 습도와 풍속도 출력되게 하였습니다.
+2. 온도 크기를 조정하여 한 눈에 바로 보이게 하였습니다.
+3. 해당 날씨에 맞는 icon을 출력하게 하였습니다.
+4. 해당 날씨에 맞는 comment를 출력하게 하였습니다.
+5. 메인페이지를 좀더 깔끔하게 수정하였습니다.(인스타 감성이지만 기능은 없습니다..ㅎㅎ)
 
-## How to run
-
-### Clone the repository
-
-```bash
-$ git clone https://github.com/cwdoh/RN101-class.git
-```
-
-### Install whole dependencies
-
-```bash
-$ cd RN101-class
-$ npm install
-```
-
-### Execute
-
-```bash
-$ npm run start
-```
-
+201502099 이현준
+201702015 박영진
+201502049 노효근
